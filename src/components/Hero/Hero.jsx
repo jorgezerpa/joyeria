@@ -1,14 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-import heroVideo from '../../assets/heroVideo.mp4';
+import heroVideo from '../../assets/videos/heroVideo.mp4';
 
 import { Grid, Typography } from '@mui/material';
-
 import useStyles from './styles';
 
 const Hero = () => {
   const classes = useStyles();
-
+  
   return (
     <div className={classes.hero}>
       <div className={classes.videoContainer}>

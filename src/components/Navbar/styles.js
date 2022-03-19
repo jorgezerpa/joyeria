@@ -3,7 +3,7 @@ import { makeStyles } from '@mui/styles';
 export default makeStyles(theme=>({
     appBar:{
         border: 'none',
-        boxShadow: 'none'
+        boxShadow: 'none',
     },
     toolbar:{
         border: 'none',
@@ -12,5 +12,5 @@ export default makeStyles(theme=>({
     toolbarItem:{
         color: '#fff',
         textAlign: 'center',
-    }
+    },
 }))

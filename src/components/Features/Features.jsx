@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { Carousel3D } from '../../components';
+import { images } from '../../assets';
+
 
 import { Grid, Typography } from '@mui/material';
 
@@ -11,12 +13,12 @@ const Features = () => {
 
   return (
     <div className={classes.section}>
-        <Grid container className={classes.container}>
+        <Grid container className={classes.container} justifyContent='center'>
             <Grid item className={classes.text}>
                 <Typography variant='body1' fontStyle='italic'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat laudantium aliquam enim laboriosam voluptates minus nulla commodi earum iste, deleniti recusandae distinctio culpa perspiciatis quae impedit a eaque aut aspernatur.</Typography>
             </Grid>
             <Grid item className={classes.carouselContainer}>
-                <Carousel3D />
+                <Carousel3D  images={images}/>
             </Grid>
         </Grid>
     </div>

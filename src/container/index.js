@@ -1,7 +1,9 @@
-import Header from './Header/Header';
-import Features from './Features/Features';
+import Home from './Home/Home';
+import Store from './store/Store';
+import Contact from './Contact/Contact';
 
 export {
-    Header,
-    Features
+    Home,
+    Store,
+    Contact,
 }
