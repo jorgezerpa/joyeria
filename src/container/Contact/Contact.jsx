@@ -31,29 +31,31 @@ const Contact = () => {
 
         {/* autorized agents */}
 
-      <Grid container spacing={10} padding={5}>
+      <Grid container spacing={5} padding={5}>
             <Grid item className={classes.agentsTitle}>
                 <Typography variant='h3'>Nuestros Agentes</Typography>
-            </Grid>
-            { agents.map((agent, key)=>(
-                <Grid item key={key} sm={6} md={4} ls={3} >
+            </Grid>              
+
+           { agents.map((agent, key)=>(
+                <Grid item key={key} sm={10} md={3} lg={3}>
                     <Card className={classes.agentCard}>
-                        <CardMedia className={classes.agentImageContainer}>
-                            <img className={classes.agentImage} src={agent.image} alt="" />
-                        </CardMedia>
-                        <CardContent className={classes.cardContent}>
-                            <Typography variant='body1'>{ agent.name }</Typography>
-                            <Typography variant='body1'>{ agent.whatsapp }</Typography>
-                        </CardContent>
-                        <CardActions>
-                            <Button>
-                                <img width='30px' src={ rrss.whatsappIcon } alt="" />
-                            </Button>
-                        </CardActions>
+                      <CardMedia className={classes.agentImageContainer}>
+                        <img className={classes.agentImage} src={agent.image} alt="" />
+                      </CardMedia>
+                      <CardContent>
+                            {agent.name}
+                      </CardContent>
+                      <CardActions>
+                          <Button>
+                              <img src={rrss.whatsappIcon} alt="" />
+                          </Button>
+                      </CardActions>
                     </Card>
-                </Grid>       
-            )) 
-          }
+                </Grid>              
+
+           ))
+           }
+
       </Grid>
       
 

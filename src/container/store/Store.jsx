@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
+import "animate.css/animate.min.css";
 
 import { products } from '../../assets';
-
 
 import { CarouselStore } from '../../components';
 import { Typography, Grid } from '@mui/material';
@@ -23,13 +24,27 @@ const Store = () => {
 
 
                         {/* PRODUCTS  */}
-      <CarouselStore title='Relojes' products={ products.watches } />
-      <CarouselStore title='Brazaletes' products={ products.bracelet } />
-      <CarouselStore title='Anillos' products={ products.rings } />
-      <CarouselStore title='Collares' products={ products.necklace } />
-      <CarouselStore title='Zarcillos' products={ products.stud } />
+      <AnimationOnScroll animateIn="animate__fadeInRightBig" delay={50} duration={2}>
+            <CarouselStore  title='Relojes' products={ products.watches } />      
+      </AnimationOnScroll>
+     
+      <AnimationOnScroll animateIn="animate__fadeInRightBig" delay={50} duration={2}>
+            <CarouselStore  title='Brazaletes' products={ products.bracelet } /> 
+      </AnimationOnScroll>
 
-    </div>
+      <AnimationOnScroll animateIn="animate__fadeInRightBig" delay={50} duration={2}>
+            <CarouselStore  title='Anillos' products={ products.rings } />        
+      </AnimationOnScroll>
+     
+      <AnimationOnScroll animateIn="animate__fadeInRightBig" delay={50} duration={2}>
+            <CarouselStore  title='Collares' products={ products.necklace } />    
+      </AnimationOnScroll>
+     
+      <AnimationOnScroll animateIn="animate__fadeInRightBig" delay={50} duration={2}>
+            <CarouselStore  title='Zarcillos' products={ products.stud } />
+      </AnimationOnScroll>
+     
+  </div>
   )
 }
 

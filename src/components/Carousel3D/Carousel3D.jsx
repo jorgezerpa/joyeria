@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import { Button } from '@mui/material';
+import { Typography, IconButton } from '@mui/material';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 import './styles.css';
 
@@ -36,6 +38,7 @@ const Carousel3D = ({ images }) => {
 
   return (
     <div className='container'>
+        <Typography variant='h3'>Nuestros Mejores Productos</Typography>
         <div className="scene" style={{width:`${cellWidth}px`, height:`${cellHeight}px` }}>
           <div className="carousel" style={{transform:`rotateY(${rotation}deg)`}}>
               {images.map((image, key)=>(
@@ -49,8 +52,8 @@ const Carousel3D = ({ images }) => {
         </div>
 
         <div className='controls'>
-          <Button onClick={()=>setRotation((prev)=>prev-rotationY)}>back</Button>
-          <Button onClick={()=>setRotation((prev)=>prev+rotationY)}>next</Button>
+          <IconButton onClick={()=>setRotation((prev)=>prev+rotationY)}><ArrowBackIosIcon/></IconButton>
+          <IconButton onClick={()=>setRotation((prev)=>prev-rotationY)}><ArrowForwardIosIcon/></IconButton>
         </div>
     </div>
   )   

@@ -12,5 +12,7 @@ export default makeStyles(theme=>({
     toolbarItem:{
         color: '#fff',
         textAlign: 'center',
+        display: 'block',
+        textDecoration: 'none',
     },
 }))

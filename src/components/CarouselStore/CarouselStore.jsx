@@ -3,16 +3,19 @@ import React, { useState, useEffect } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
-import { images } from '../../assets';
+import { DialogDetail } from '../../components';
+
 import { Typography } from '@mui/material';
 
 import useStyles from './styles';
+
 
 const CarouselStore = ({ title, products }) => {
     const classes = useStyles();
 
     const [sliderCellWidth, setSliderCellWidth] = useState(33);
     const [windowWidth , setwindowWidth ] = useState(window.innerWidth);
+    const [open, setOpen] = useState(false);
      
     window.addEventListener('resize', ()=>{
         setwindowWidth(window.innerWidth);
@@ -28,6 +31,16 @@ const CarouselStore = ({ title, products }) => {
 
 
 
+    //handle Dialog
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
+
+
   return (
         <div className={classes.container}>
         <Typography variant='h3' gutterBottom margin={2}>{ title }</Typography>
@@ -38,13 +51,19 @@ const CarouselStore = ({ title, products }) => {
                 centerSlidePercentage= {sliderCellWidth}
             >
                 { products.map((product, key) =>(
-                    <div key={key}>   
-                        <img src={product.image} />
+                    <div key={key} onClick={(e)=>{
+                        console.log(e.currentTarget)
+                        handleClickOpen()
+                    }}>   
+                        <img src={product.image} alt='' />
                         <p className="legend"> { product.name } | { product.price }</p>
                     </div>
                 ))}
-            </Carousel>
-
+            </Carousel>                
+   
+            <DialogDetail open={open} handleClose={handleClose} image={products[1].image} />
+   
+   
         </div>
   )
 }

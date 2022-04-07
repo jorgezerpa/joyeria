@@ -6,6 +6,7 @@ import CarouselStore from './CarouselStore/CarouselStore';
 import Header from './Header/Header';
 import Features from './Features/Features';
 import Video from './Video/Video';
+import DialogDetail from './DialogDetail/DialogDetail';
 
 export {
     Hero,
@@ -15,5 +16,6 @@ export {
     CarouselStore,
     Header,
     Features,
-    Video
+    Video,
+    DialogDetail
 }

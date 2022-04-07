@@ -2,9 +2,12 @@
 import template2 from './images/template2.jpg';
 
             //RRSS
-import facebookIcon from './icons/facebook.png';
-import instagramIcon from './icons/instagram.png';
-import whatsappIcon from './icons/whatsapp.png';
+import facebookIcon from './icons/facebook.svg';
+import instagramIcon from './icons/instagram.svg';
+import whatsappIcon from './icons/whatsapp.svg';
+import facebookIconWhite from './icons/facebook-white.svg';
+import instagramIconWhite from './icons/instagram-white.svg';
+import whatsappIconWhite from './icons/whatsapp-white.svg';
 
             //TEMPLATE PRODUCTS
 import bracelet from './images/bracelet.jpg';
@@ -31,6 +34,9 @@ const images = [
     facebookIcon,
     instagramIcon,
     whatsappIcon,
+    facebookIconWhite,
+    instagramIconWhite,
+    whatsappIconWhite,
  };
 
             //products

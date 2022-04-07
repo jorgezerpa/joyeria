@@ -25,19 +25,17 @@ export default makeStyles(theme=>({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    agentCard: {
+    agentCard:{
+        width: '100%',
+    },
+    agentImageContainer:{
         width: '100%',
         position: 'relative',
+        height: '300px',
+        overflowY: 'hidden',
     },
-    agentImageContainer: {
-        width: '100%',
-        position: 'relative',
-        height: '400px',
-        overflowY: 'hidden'
-    },
-    agentImage: {
+    agentImage:{
         width: '100%',
     },
-    cardContent: {
-    }
+
 }))

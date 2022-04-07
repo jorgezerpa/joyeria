@@ -7,9 +7,12 @@ export default makeStyles(theme=>({
         minHeight: '100vh',
         padding: '10px',
         marginTop: '100px',
-        marginBottom: '100px',
+        marginBottom: '200px',
         [theme.breakpoints.down('sm')]:{
             marginBottom: '270px',
+        },
+        [theme.breakpoints.down('xs')]:{
+            marginBottom: '370px',
         }
     },
     container:{

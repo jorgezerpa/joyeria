@@ -9,11 +9,14 @@ const theme = createTheme({
   
   palette: {
     primary: {
-      main: 'rgba(0,0,0,.5)'
+      main: '#000'
     },
-    // secondary: {
-    //   main: ''
-    // }
+    menu: {
+      main: 'rgba(0,0,0,.8)'
+    },
+    secondary: {
+      main: '#fff'
+    }
   },
 
   typography: {
@@ -25,7 +28,13 @@ const theme = createTheme({
 
 
     breakpoints: {
-
+        values:{
+          xs: 400,
+          sm: 600,
+          md: 900,
+          lg: 1200,
+          xl: 1536,
+        }
     }
 })
 
