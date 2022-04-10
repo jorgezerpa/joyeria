@@ -5,8 +5,9 @@ import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, B
 
 import useStyles from './styles';
 
-const DialogDetail = ({ open, handleClose, image, product }) => {
+const DialogDetail = ({ open, handleClose, image, product, cart }) => {
     const classes = useStyles();
+
 
   return (
         <Dialog open={ open }
@@ -34,7 +35,7 @@ const DialogDetail = ({ open, handleClose, image, product }) => {
                 </DialogContentText>
             </DialogContent>
             <DialogActions className={classes.actions}>
-                <Button>Add To cart</Button>
+                <Button onClick={()=>cart.addToCart(product.name, product.price, 2 )} >Add To cart</Button>
                 <Button onClick={handleClose}>close</Button>
             </DialogActions>
         </Dialog>

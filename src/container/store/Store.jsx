@@ -13,12 +13,9 @@ import useStyles from './styles';
 const Store = () => {
   const classes = useStyles();
   const cart = new Cart();
-
       
 
-  const handleAddToCart = (key, value) => {
-      cart.addToCart(key, value)
-  }
+  setTimeout(()=>{cart.updateQuantity('stud name', 'sum')}, 20000)
 
   return (
     <div className={classes.container}>
@@ -33,32 +30,29 @@ const Store = () => {
 
 
                         {/* PRODUCTS  */}
-      
-
-
       <AnimationOnScroll animateIn="animate__fadeInRightBig" delay={50} duration={2}>
             <div id='watches'></div>
-            <CarouselStore   title='Relojes' products={ products.watches } />  
+            <CarouselStore cart={cart}  title='Relojes' products={ products.watches } />  
       </AnimationOnScroll>
      
       <AnimationOnScroll animateIn="animate__fadeInRightBig" delay={50} duration={2}>
             <div id='bracelets'></div>
-            <CarouselStore  title='Brazaletes' products={ products.bracelet } /> 
+            <CarouselStore cart={cart}  title='Brazaletes' products={ products.bracelet } /> 
       </AnimationOnScroll>
 
       <AnimationOnScroll animateIn="animate__fadeInRightBig" delay={50} duration={2}>
             <div id='rings'></div>
-            <CarouselStore  title='Anillos' products={ products.rings } />        
+            <CarouselStore cart={cart}  title='Anillos' products={ products.rings } />        
       </AnimationOnScroll>
      
       <AnimationOnScroll animateIn="animate__fadeInRightBig" delay={50} duration={2}>
             <div id='necklaces'></div>
-            <CarouselStore  title='Collares' products={ products.necklace } />    
+            <CarouselStore cart={cart} title='Collares' products={ products.necklace } />    
       </AnimationOnScroll>
      
       <AnimationOnScroll animateIn="animate__fadeInRightBig" delay={50} duration={2}>
             <div id='studs'></div>
-            <CarouselStore  title='Zarcillos' products={ products.stud } />
+            <CarouselStore cart={cart} title='Zarcillos' products={ products.stud } />
       </AnimationOnScroll>
      
   </div>

@@ -10,7 +10,7 @@ import { Typography } from '@mui/material';
 import useStyles from './styles';
 
 
-const CarouselStore = ({ title, products }) => {
+const CarouselStore = ({ title, products, cart }) => {
     const classes = useStyles();
 
     const [sliderCellWidth, setSliderCellWidth] = useState(33);
@@ -64,7 +64,7 @@ const CarouselStore = ({ title, products }) => {
                 ))}
             </Carousel>                
    
-            <DialogDetail open={open} handleClose={handleClose} product={products[parseInt(id)]} image={products[1].image} />
+            <DialogDetail cart={cart} open={open} handleClose={handleClose} product={products[parseInt(id)]} image={products[1].image} />
    
    
         </div>
