@@ -5,7 +5,7 @@ import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, B
 
 import useStyles from './styles';
 
-const DialogDetail = ({ open, handleClose, image }) => {
+const DialogDetail = ({ open, handleClose, image, product }) => {
     const classes = useStyles();
 
   return (
@@ -16,11 +16,11 @@ const DialogDetail = ({ open, handleClose, image }) => {
             aria-describedby="alert-dialog-description"
         >
             <div className={classes.imageContainer}>
-                <img className={classes.image} src={image} alt="" />
+                <img className={classes.image} src={product!==undefined && product.image} alt="" />
             </div>
 
             <DialogTitle className={classes.title} id="alert-dialog-title">
-                Product Name
+                {product!==undefined && product.name } | {product!==undefined && product.price }
             </DialogTitle>
             <DialogContent className={classes.content}>
                 <DialogContentText className={classes.contentText} id="alert-dialog-description">

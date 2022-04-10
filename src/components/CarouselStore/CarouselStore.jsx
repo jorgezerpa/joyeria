@@ -16,6 +16,7 @@ const CarouselStore = ({ title, products }) => {
     const [sliderCellWidth, setSliderCellWidth] = useState(33);
     const [windowWidth , setwindowWidth ] = useState(window.innerWidth);
     const [open, setOpen] = useState(false);
+    const [id, setId] = useState(null); 
      
     window.addEventListener('resize', ()=>{
         setwindowWidth(window.innerWidth);
@@ -51,8 +52,10 @@ const CarouselStore = ({ title, products }) => {
                 centerSlidePercentage= {sliderCellWidth}
             >
                 { products.map((product, key) =>(
-                    <div key={key} onClick={(e)=>{
-                        console.log(e.currentTarget)
+                    <div id={key} key={key} onClick={(e)=>{
+                        // console.log(e.currentTarget.children[1].innerHTML)
+                        // console.log(e.target.id)
+                        setId(e.target.id)
                         handleClickOpen()
                     }}>   
                         <img src={product.image} alt='' />
@@ -61,7 +64,7 @@ const CarouselStore = ({ title, products }) => {
                 ))}
             </Carousel>                
    
-            <DialogDetail open={open} handleClose={handleClose} image={products[1].image} />
+            <DialogDetail open={open} handleClose={handleClose} product={products[parseInt(id)]} image={products[1].image} />
    
    
         </div>

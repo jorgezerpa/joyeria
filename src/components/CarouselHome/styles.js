@@ -14,4 +14,7 @@ export default makeStyles(theme=>({
     text:{
 
     },
+    CarouselHomeImage:{
+        maxHeight: '260px'
+    }
 }))

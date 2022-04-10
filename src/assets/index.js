@@ -112,6 +112,27 @@ const products = {
 };
 
 
+
+
+//Categories
+class Categorie {
+    constructor(name, link, image){
+        this.name = name;
+        this.link = link;
+        this.image = image;
+    }
+}
+
+const categories = [
+    new Categorie("Relojes", '#watches', watch),
+    new Categorie("Brazaletes", '#braceletes', bracelet),
+    new Categorie("Collares", '#necklaces', necklace),
+    new Categorie("Zarcillos", '#studs', stud),
+    new Categorie("Anillos", '#rings', ring),
+]
+
+
+
 // agents 
 class Agent{
     constructor(name, contact, image){
@@ -120,6 +141,7 @@ class Agent{
         this.image = image;
     }
 }
+
 
 const agents = [
     new Agent('Agent Name', '+4444444444', agent ),
@@ -133,6 +155,7 @@ export {
     images,
     rrss,
     products,
+    categories,
     agents,
 }
 
