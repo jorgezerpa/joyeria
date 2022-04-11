@@ -4,10 +4,10 @@ class Cart{
 
     
     getItemQuantity(name){
-        const currentCart = JSON.parse(localStorage.getItem('gemesaCart'));        
-        
-        let item = currentCart.filter(item=>item=== name);
-        return item[0].quantity;
+        let currentCart = JSON.parse(localStorage.getItem('gemesaCart'));        
+        // let item = currentCart.length<0 ? currentCart.filter(item=>item=== name)[0].quantity : 0;
+        let item = currentCart.findIndex(item=>item.name===name);
+        return currentCart[item].quantity;
     }
 
 
@@ -54,14 +54,29 @@ class Cart{
 
         switch (index) {
             case -1:
-                if(operation === 'sum') this.addToCart(name, price, quantity);
-                if(operation === 'less') return false;
+                if(operation === 'sum'){
+                    this.addToCart(name, price, quantity);
+                    showQuantity(1);
+                } 
+                if(operation === 'less'){
+                    return false;
+                    // showQuantity(cart[index].quantity);
+                }
                 return false  //when actualize, the condition the get into default becomes true, so the element is eliminated again 
                 break;
             default:
-                    if(operation === 'sum') cart[index].quantity = cart[index].quantity+1 ; 
-                    if(operation === 'less') cart[index].quantity = cart[index].quantity-1; 
-                    if(operation === 'less' && cart[index].quantity===0) cart.splice(index, 1); 
+                    if(operation === 'sum'){
+                        cart[index].quantity = cart[index].quantity+1 ; 
+                        showQuantity(cart[index].quantity);
+                    }
+                    if(operation === 'less'){
+                        cart[index].quantity = cart[index].quantity-1; 
+                        showQuantity(cart[index].quantity);
+                    } 
+                    if(operation === 'less' && cart[index].quantity===0){
+                        cart.splice(index, 1); 
+                        showQuantity(0);
+                    } 
                 break;
             }
             

@@ -14,7 +14,9 @@ const StoreGrid = ({ products }) => {
     const [open, setOpen] = useState(false);
     const [id, setId] = useState(null); 
 
-   //handle Dialog
+
+
+    //handle Dialog
    const handleClickOpen = () => {
     setOpen(true);
 };

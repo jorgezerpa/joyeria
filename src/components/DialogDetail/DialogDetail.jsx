@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Typography, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button, Icon } from '@mui/material';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
@@ -9,8 +9,20 @@ import useStyles from './styles';
 
 const DialogDetail = ({ open, handleClose, product, cart }) => {
     const classes = useStyles();
+    const [quantity, setQuantity] = useState(0); //quantity to show on dialog
+    
+    
+    // if(product){
+    //     const [quantity, setQuantity] = useState(product.quantity);
+    // } 
 
-    const [quantity, setQuantity] = useState(0);
+
+    // useEffect(()=>{
+    //     // setQuantity(10)
+    //     const actualQuantity = cart.getItemQuantity(product.name);
+    //     setQuantity(actualQuantity)
+    // }, [open])
+    
 
   return (
         <Dialog open={ open }
@@ -19,6 +31,7 @@ const DialogDetail = ({ open, handleClose, product, cart }) => {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
         >
+
             <div className={classes.imageContainer}>
                 <img className={classes.image} src={product!==undefined && product.image} alt="" />
             </div>
@@ -30,10 +43,6 @@ const DialogDetail = ({ open, handleClose, product, cart }) => {
                 <DialogContentText className={classes.contentText} id="alert-dialog-description">
                     <div>data: info</div>
                     <div>data: info</div>
-                    <div>data: info</div>
-                    <div>data: info</div>
-                    <div>data: info</div>
-                    <div>data: info</div> 
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut provident, voluptate laboriosam hic porro similique perferendis? Dolorem, recusandae quam! Id, totam ad. Deserunt exercitationem ipsa a totam eum qui architecto.
                 </DialogContentText>
             </DialogContent>
