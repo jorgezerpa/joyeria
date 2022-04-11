@@ -11,7 +11,7 @@ export default makeStyles(theme=>({
         position: 'relative',
         width: '100%',
         height: '100%',
-        marginBottom: '90px'
+        marginBottom: '20px'
     },
     text:{
 
@@ -23,16 +23,21 @@ export default makeStyles(theme=>({
         maxHeight: '260px'
     },
     slide:{
-        padding: '15%',
-        transition: '.5s all',
+        padding: '10%',
+        transition: '1s all',
         [theme.breakpoints.down('sm')]:{
             padding: '5%'
         },
         '&:hover': {
             transform: 'scale(1.1)'
          },
-        '&:hover>legend': {
-            transform: 'scale(1.5)'
+        '& .underline': {
+            borderBottom: '3px solid black',
+            transform: 'scaleX(0)',
+            transition: '.8s all',
+        },
+        '&:hover .underline': {
+            transform: 'scaleX(1)',
          },
         
     }

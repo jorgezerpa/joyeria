@@ -19,13 +19,13 @@ export default makeStyles(theme=>({
         position: 'absolute',
         Height: '100%',
         minWidth: '100%',
-        top: '50%',
+        top: '0',
         left:'50%',
-        transform: 'translate(-50%, -50%)',
+        transform: 'translate(-50%, 0)',
     },
     content:{
         position: 'absolute',
-        background: 'linear-gradient(90deg, rgba(255,255,255,.3), rgba(255,255,255,.1) 50%, transparent 100% ) ',
+        background: 'linear-gradient(90deg, rgba(200,20,200,.5), rgba(200,200,200,.3) 50%, transparent 100% ) ',
         top:'0',
         left: '0',
         minWidth: '100%',
@@ -38,10 +38,20 @@ export default makeStyles(theme=>({
     },
     title:{
         color: '#fff',
+        paddingLeft: '10px'
         
     },
     subtitle:{
         color: '#fff',
+        paddingLeft: '10px'
     },
+    heroButton:{
+        position: 'relative',
+        left: '10px',
+        transform: '1s all',
+        '&:hover':{
+            outline: '3px solid black',
+        }
+    }
     
 }))

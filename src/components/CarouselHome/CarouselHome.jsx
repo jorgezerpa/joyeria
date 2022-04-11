@@ -15,9 +15,11 @@ const CarouselHome = ({title, subtitle}) => {
 
     const [sliderCellWidth, setSliderCellWidth] = useState(33);
     const [windowWidth , setwindowWidth ] = useState(window.innerWidth);
+    const [showArrows , setShowArrows ] = useState(true);
      
     window.addEventListener('resize', ()=>{
         setwindowWidth(window.innerWidth);
+        if(windowWidth<600) setShowArrows(false); else setShowArrows(true);
     })
 
     useEffect(()=>{
@@ -25,7 +27,8 @@ const CarouselHome = ({title, subtitle}) => {
             setSliderCellWidth(90)
         }else{
             setSliderCellWidth(33)
-        }
+        };
+        if(windowWidth<600) setShowArrows(false); else setShowArrows(true)
     }, [windowWidth])
 
 
@@ -46,12 +49,15 @@ const CarouselHome = ({title, subtitle}) => {
                 centerSlidePercentage= {sliderCellWidth}
                 showThumbs = {false}
                 className={classes.carousel}
-
+                showArrows={ showArrows }
+                showStatus={false}
+                showIndicators={false}
             >
                 { categories.map((categorie, key) =>(
                     <div className={classes.slide} key={key} onClick={()=>{handleCategorieClick(categorie.link)}}>   
                         <img className={classes.CarouselHomeImage} alt="" src={categorie.image} />
-                        <p className={classes.legend}>{ categorie.name }</p>
+                        <p>{ categorie.name }</p>
+                        <div className='underline'></div>
                     </div>
                 ))}
             </Carousel>

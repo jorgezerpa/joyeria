@@ -1,4 +1,6 @@
-import React, { useState, useLayoutEffect } from 'react'
+import React, { useState, useLayoutEffect } from 'react';
+
+import fakeWatch from '../../assets/images/fake-watch.jpg';
 
 import heroVideo from '../../assets/videos/heroVideo.mp4';
 
@@ -22,7 +24,8 @@ const Video = () => {
   return (
     <div className={classes.hero}>
       <div className={classes.videoContainer}>
-        <video src={heroVideo} className={classes.video} muted autoPlay></video>
+        {/* <video src={heroVideo} className={classes.video} muted autoPlay></video> */}
+        <img src={fakeWatch} className={classes.video} ></img>
       </div>
 
       <Grid container justifyContent='center' className={classes.content}>
@@ -38,8 +41,8 @@ const Video = () => {
                 </Typography>
             </Fade>
             <Fade in={fadeIn} timeout={5000}>
-                <Button className={classes.title} style={{background: '#fff', color: '#000', padding: '15px', marginTop: '20px'}}>
-                  Lorem ipsum dolor sit amet
+                <Button className={classes.heroButton} style={{background: '#fff', color: '#000', padding: '15px', marginTop: '20px', fontSize:'1rem', fontWeight: '600'}}>
+                  Find the time
                 </Button>
             </Fade>
 
