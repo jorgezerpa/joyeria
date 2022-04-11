@@ -9,12 +9,17 @@ import { products } from '../../assets';
 
 import { StoreGrid } from '../../components';
 
+
 const Store = () => {
+
   const [value, setValue] = React.useState('1');
 
+      //tabs
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+
 
   return (
     <Box paddingTop='100px' zIndex={1000} sx={{ width: '100%', typography: 'body1' }}>
