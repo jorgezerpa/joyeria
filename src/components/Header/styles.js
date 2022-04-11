@@ -5,7 +5,8 @@ export default makeStyles(theme=>({
         overflow: 'hidden',
         position: 'relative',
         width: '100%',
-        height: '100vh',
+        height: '85vh',
+        marginBottom: '60px'
     },
     videoContainer:{
         position: 'absolute',
@@ -24,7 +25,7 @@ export default makeStyles(theme=>({
     },
     content:{
         position: 'absolute',
-        background: 'rgba(0,0,0,.5)',
+        background: 'linear-gradient(90deg, rgba(255,255,255,.3), rgba(255,255,255,.1) 50%, transparent 100% ) ',
         top:'0',
         left: '0',
         minWidth: '100%',
@@ -33,14 +34,14 @@ export default makeStyles(theme=>({
         justifyContent: 'center',
         alignItems: 'center',
         zIndex: '100',
+        paddingLeft: '0px'
     },
     title:{
         color: '#fff',
-        textAlign: 'center',
+        
     },
     subtitle:{
         color: '#fff',
-        textAlign: 'center',
     },
     
 }))

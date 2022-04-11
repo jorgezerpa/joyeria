@@ -26,7 +26,7 @@ const Video = () => {
       </div>
 
       <Grid container justifyContent='center' className={classes.content}>
-          <Grid item xs={10} md={6} lg={4}>
+          <Grid item xs={10} md={10} lg={10}>
             <Fade in={fadeIn} timeout={2000}>
                 <Typography className={classes.title} variant='h1'>
                   SLOGAN SLOGAN
@@ -36,6 +36,11 @@ const Video = () => {
                 <Typography className={classes.title} variant='h2'>
                   Lorem ipsum dolor sit amet
                 </Typography>
+            </Fade>
+            <Fade in={fadeIn} timeout={5000}>
+                <Button className={classes.title} style={{background: '#fff', color: '#000', padding: '15px', marginTop: '20px'}}>
+                  Lorem ipsum dolor sit amet
+                </Button>
             </Fade>
 
           </Grid>

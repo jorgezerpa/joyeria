@@ -12,7 +12,7 @@ const theme = createTheme({
       main: '#000'
     },
     menu: {
-      main: 'rgba(0,0,0,.8)'
+      main: 'rgba(255,255,255,1)'
     },
     secondary: {
       main: '#fff'
@@ -43,13 +43,13 @@ const theme = createTheme({
 theme.typography.h1={
   fontSize: '2.2rem',
   [theme.breakpoints.down('sm')]: {
-  fontSize: '12vw',
+  fontSize: '9vw',
   },
 };
 theme.typography.h2={
   fontSize: '2rem',
   [theme.breakpoints.down('sm')]: {
-  fontSize: '7.8vw',
+  fontSize: '7.2vw',
   },
 };
 theme.typography.h3={

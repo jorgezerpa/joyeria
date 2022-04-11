@@ -8,9 +8,7 @@ import { Typography } from '@mui/material';
 
 import useStyles from './styles';
 
-
-
-const CarouselHome = ({title, subtitle}) => {
+const Slider = () => {
     const classes = useStyles();
 
     const [sliderCellWidth, setSliderCellWidth] = useState(33);
@@ -22,7 +20,7 @@ const CarouselHome = ({title, subtitle}) => {
 
     useEffect(()=>{
         if(windowWidth<600){
-            setSliderCellWidth(90)
+            setSliderCellWidth(80)
         }else{
             setSliderCellWidth(33)
         }
@@ -37,21 +35,17 @@ const CarouselHome = ({title, subtitle}) => {
 
   return (
         <div className={classes.container}>
-        <Typography variant='h3' gutterBottom margin={2}>{ title }</Typography>
-        <Typography variant='body1' gutterBottom margin={2}>{ subtitle }</Typography>
+        <Typography variant='h3' gutterBottom margin={2}>Categorías</Typography>
 
             <Carousel
                 width='100%'
                 centerMode={true}
                 centerSlidePercentage= {sliderCellWidth}
-                showThumbs = {false}
-                className={classes.carousel}
-
             >
                 { categories.map((categorie, key) =>(
-                    <div className={classes.slide} key={key} onClick={()=>{handleCategorieClick(categorie.link)}}>   
+                    <div key={key} onClick={()=>{handleCategorieClick(categorie.link)}}>   
                         <img className={classes.CarouselHomeImage} alt="" src={categorie.image} />
-                        <p className={classes.legend}>{ categorie.name }</p>
+                        <p className="legend">{ categorie.name }</p>
                     </div>
                 ))}
             </Carousel>
@@ -60,4 +54,4 @@ const CarouselHome = ({title, subtitle}) => {
   )
 }
 
-export default CarouselHome
+export default Slider

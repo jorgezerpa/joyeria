@@ -1,5 +1,6 @@
             //TEMPLATE IMAGE
 import template2 from './images/template2.jpg';
+import woman from './images/woman.jpg';
 
             //RRSS
 import facebookIcon from './icons/facebook.svg';
@@ -124,11 +125,9 @@ class Categorie {
 }
 
 const categories = [
-    new Categorie("Relojes", '#watches', watch),
-    new Categorie("Brazaletes", '#braceletes', bracelet),
-    new Categorie("Collares", '#necklaces', necklace),
-    new Categorie("Zarcillos", '#studs', stud),
-    new Categorie("Anillos", '#rings', ring),
+    new Categorie("Women", '#watches', watch),
+    new Categorie("Men", '#braceletes', watch),
+    new Categorie("Bands", '#braceletes', watch),
 ]
 
 
@@ -151,12 +150,17 @@ const agents = [
     new Agent('Agent Name', '+4444444444', agent ),
 ]
 
+
+
+
 export {
     images,
     rrss,
     products,
     categories,
     agents,
+    woman,
+
 }
 
 

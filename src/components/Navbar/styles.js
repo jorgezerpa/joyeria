@@ -10,7 +10,7 @@ export default makeStyles(theme=>({
         boxShadow: 'none'
     },
     toolbarItem:{
-        color: '#fff',
+        color: '#000',
         textAlign: 'center',
         display: 'block',
         textDecoration: 'none',

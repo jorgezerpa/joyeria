@@ -7,6 +7,7 @@ import Header from './Header/Header';
 import Features from './Features/Features';
 import Video from './Video/Video';
 import DialogDetail from './DialogDetail/DialogDetail';
+import Slider from './Slider/Slider';
 
 export {
     Hero,
@@ -17,5 +18,6 @@ export {
     Header,
     Features,
     Video,
-    DialogDetail
+    DialogDetail,
+    Slider
 }

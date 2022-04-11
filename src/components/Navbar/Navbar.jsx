@@ -27,7 +27,7 @@ const Navbar = () => {
                 </Grid>
                 <Grid item xs={3} md={3} >
                     <IconButton className={classes.toolbarItem}>
-                          <WhatsAppIcon color='secondary' />                      
+                          <WhatsAppIcon color='#000' />                      
                     </IconButton>
                 </Grid>
             </Grid>
