@@ -8,6 +8,7 @@ import Features from './Features/Features';
 import Video from './Video/Video';
 import DialogDetail from './DialogDetail/DialogDetail';
 import Slider from './Slider/Slider';
+import StoreGrid from './StoreGrid/StoreGrid';
 
 export {
     Hero,
@@ -19,5 +20,6 @@ export {
     Features,
     Video,
     DialogDetail,
-    Slider
+    Slider,
+    StoreGrid
 }
