@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button } from '@mui/material';
-
+import { Typography, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button, Icon } from '@mui/material';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 
 import useStyles from './styles';
 
-const DialogDetail = ({ open, handleClose, image, product, cart }) => {
+
+const DialogDetail = ({ open, handleClose, product, cart }) => {
     const classes = useStyles();
 
+    const [quantity, setQuantity] = useState(0);
 
   return (
         <Dialog open={ open }
@@ -35,8 +38,11 @@ const DialogDetail = ({ open, handleClose, image, product, cart }) => {
                 </DialogContentText>
             </DialogContent>
             <DialogActions className={classes.actions}>
-                <Button onClick={()=>cart.addToCart(product.name, product.price, 2 )} >Add To cart</Button>
                 <Button onClick={handleClose}>close</Button>
+                <Button onClick={()=>cart.addToCart(product.name, product.price, 1 )} >Add To cart</Button>
+                <Icon><AddCircleIcon onClick={()=>{cart.updateQuantity(product.name, product.price, 1, 'sum', setQuantity)}} /> </Icon>
+                <Typography variant='body1'>{ quantity }</Typography>
+                <Icon ><RemoveCircleIcon onClick={()=>{cart.updateQuantity(product.name, product.price, 1, 'less', setQuantity)}} /> </Icon>
             </DialogActions>
         </Dialog>
   )
