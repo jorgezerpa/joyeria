@@ -47,7 +47,7 @@ const DialogDetail = ({ open, handleClose, product, cart }) => {
             </DialogContent>
             <DialogActions className={classes.actions}>
                 <Button onClick={handleClose}>close</Button>
-                <Button onClick={()=>cart.addToCart(product.name, product.price, 1 )} >Add To cart</Button>
+                <Button onClick={()=>cart.addToCart(product.name, product.price, 1, setQuantity )} >Add To cart</Button>
                 <Icon><AddCircleIcon onClick={()=>{cart.updateQuantity(product.name, product.price, 1, 'sum', setQuantity)}} /> </Icon>
                 <Typography variant='body1'>{ quantity }</Typography>
                 <Icon ><RemoveCircleIcon onClick={()=>{cart.updateQuantity(product.name, product.price, 1, 'less', setQuantity)}} /> </Icon>

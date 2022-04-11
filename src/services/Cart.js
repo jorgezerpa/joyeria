@@ -4,17 +4,22 @@ class Cart{
 
     
     getItemQuantity(name){
+        if(JSON.parse(localStorage.getItem('gemesaCart'))===null){
+            localStorage.setItem('gemesaCart', JSON.stringify([]));        
+        } 
+
         let currentCart = JSON.parse(localStorage.getItem('gemesaCart'));        
-        // let item = currentCart.length<0 ? currentCart.filter(item=>item=== name)[0].quantity : 0;
+        console.log(currentCart)
         let item = currentCart.findIndex(item=>item.name===name);
+        if(item===-1) return 0;
         return currentCart[item].quantity;
     }
 
 
-    addToCart(name, price, quantity){
-                //create if not exist
+    addToCart(name, price, quantity, showQuantity){
+        //create if not exist
         if(JSON.parse(localStorage.getItem('gemesaCart'))===null){
-            localStorage.setItem('gemesaCart', JSON.stringify([]));
+            localStorage.setItem('gemesaCart', JSON.stringify([]));        
         } 
 
         const currentCart = JSON.parse(localStorage.getItem('gemesaCart'));
@@ -23,11 +28,11 @@ class Cart{
         const repeatedItem = currentCart.find((item)=> item.name===name);
         if(!repeatedItem){
             const newCart =  [...currentCart, {name, price, quantity}]  
-            window.localStorage.setItem('gemesaCart', JSON.stringify(newCart));   
+            window.localStorage.setItem('gemesaCart', JSON.stringify(newCart)); 
+            showQuantity(1);
             console.log(JSON.parse(localStorage.getItem('gemesaCart')))
             return false;
-        }        
-        console.log(JSON.parse(localStorage.getItem('gemesaCart')))
+        }
     };
     
     removeFromCart(product){
