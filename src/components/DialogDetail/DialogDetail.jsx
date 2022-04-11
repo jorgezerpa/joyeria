@@ -12,16 +12,15 @@ const DialogDetail = ({ open, handleClose, product, cart }) => {
     const [quantity, setQuantity] = useState(0); //quantity to show on dialog
     
     
-    // if(product){
-    //     const [quantity, setQuantity] = useState(product.quantity);
-    // } 
-
-
-    // useEffect(()=>{
-    //     // setQuantity(10)
-    //     const actualQuantity = cart.getItemQuantity(product.name);
-    //     setQuantity(actualQuantity)
-    // }, [open])
+    
+    
+    useEffect(()=>{
+        
+        if(product){
+            const actualQuantity = cart.getItemQuantity(product.name);
+            setQuantity(actualQuantity)
+        } 
+    }, [product])
     
 
   return (
