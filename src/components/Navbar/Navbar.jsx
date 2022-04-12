@@ -29,6 +29,10 @@ const Navbar = () => {
                     <IconButton className={classes.toolbarItem}>
                           <WhatsAppIcon color='#000' />                      
                     </IconButton>
+                    <IconButton component={Link} to="/cart" className={classes.toolbarItem}>
+                          <WhatsAppIcon  color='#000' />                      
+                    </IconButton>
+        
                 </Grid>
             </Grid>
           </Toolbar>

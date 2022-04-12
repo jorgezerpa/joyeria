@@ -40,7 +40,7 @@ const handleClose = () => {
                 >
                     <Card className={classes.card}>
                         <CardMedia className={classes.cardMedia}>
-                            <img className={classes.cardMediaImage} src={product.image} alt="" />
+                            <img className={classes.cardMediaImage} src={product && product.image} alt="" />
                         </CardMedia>
                         <CardContent className={classes.cardContent}>
                             <Typography className={classes.title} variant='body1'>{product.name}</Typography>

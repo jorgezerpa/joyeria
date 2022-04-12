@@ -2,6 +2,11 @@ class Cart{
     constructor(){
     }
 
+    getCart(){
+        let MyCart = JSON.parse(localStorage.getItem('gemesaCart'))===null ? false : JSON.parse(localStorage.getItem('gemesaCart'));
+        return MyCart; 
+     }
+
     
     getItemQuantity(name){
         if(JSON.parse(localStorage.getItem('gemesaCart'))===null){

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { Footer } from './Sections';
 import { Navbar } from "./components";
-import { Home, Store, Contact } from './container';
+import { Home, Store, Contact, Cart } from './container';
 
         //material-ui setup
 import { ThemeProvider } from "@mui/material/styles";
@@ -23,6 +23,7 @@ function App() {
                 <Route path="/home" element={<Home />} />        
                 <Route path="/store" element={<Store />} />        
                 <Route path="/contact" element={<Contact />} />        
+                <Route path="/cart" element={<Cart />} />        
               </Routes>
               <Footer />
             </Router>
